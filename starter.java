@@ -3,7 +3,9 @@ import java.util.*;
 
 public class starter implements InputControl, InputKeyControl
 {
+
     public static void p(String s) {System.out.print(s);}
+    static Grid g;
 	public static void main(String args[])
     {
 		// User input
@@ -13,13 +15,13 @@ public class starter implements InputControl, InputKeyControl
         // clearTest();
 
         Scanner sc = new Scanner(System.in);
-        Grid g; // dimensions
+        //Grid g; // dimensions
         int size;
 
         p("Enter side length of grid: ");
         size = sc.nextInt(); sc.nextLine();
         g = new Grid(size, size);
-        g.draw();
+
 	}
 
 	public void onMouseClick(double x, double y)
@@ -30,8 +32,9 @@ public class starter implements InputControl, InputKeyControl
 
 	public void keyPress(String s)
     {
-		// enter code here
-
+        System.out.println("test " + s);
+        if(s.equals("n"))
+            g.draw();
 	}
 
     // public static void clearTest() {   clear is confirmed to work

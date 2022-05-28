@@ -42,21 +42,23 @@ public class Grid
 
     public void update()
     {
+
         for(int i = 1; i < grid.length-1; i++)
         {
-            for(int j = 1; i < grid[0].length-1; j++)
+            for(int j = 1; j < grid[0].length-1; j++)
             {
                 int counter = 0;
-                // def a cleaner way to do this :/
-                // counter += grid[i-1][j];    <-- First solution
-                // counter += grid[i-1][j-1];
-                // counter += grid[i-1][j+1];
-                // counter += grid[i][j-1];
-                // counter += grid[i][j+1];
-                // counter += grid[i+1][j];
-                // counter += grid[i+1][j-1];
-                // counter += grid[i+1][j+1];
-
+                //def a cleaner way to do this :/
+                /*
+                counter += grid[i-1][j].getIsAlive();    //<-- First solution
+                counter += grid[i-1][j-1].getIsAlive();
+                counter += grid[i-1][j+1].getIsAlive();
+                counter += grid[i][j-1].getIsAlive();
+                counter += grid[i][j+1].getIsAlive();
+                counter += grid[i+1][j].getIsAlive();
+                counter += grid[i+1][j-1].getIsAlive();
+                counter += grid[i+1][j+1].getIsAlive();
+                */
 
                 for(int x=j-1;x<3;x++)
                 {
@@ -90,6 +92,7 @@ public class Grid
 
     public void draw()
     {
+        Canvas.getInstance().repaint();
         for(int i = 1; i < grid.length-1; i++)
         {
             for(int j = 1; j < grid[1].length-1; j++)
@@ -97,6 +100,7 @@ public class Grid
                 drawBox(j*5, i*5, grid[i][j].getIsAlive());
             }
         }
+        update();
     }
     private void drawBox(int x, int y, int alive)
     {
