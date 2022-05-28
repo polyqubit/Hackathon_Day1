@@ -102,6 +102,7 @@ public class Grid
             }
         }
         update();
+        update();
     }
     private void drawBox(int x, int y, int alive)
     {
