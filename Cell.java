@@ -7,6 +7,7 @@ public class Cell
     public Cell(int isAlive)
     {
         this.isAlive = isAlive;
+        this.isFutureAlive = isAlive;
     }
 
     public int getIsAlive()

@@ -15,12 +15,12 @@ public class Grid
         this(size, size);
     }
     
-    public Grid(int sizex, int sizey)
+    public Grid(int length, int width)
     {
-        grid = new Cell[sizex+2][sizey+2];
-        for(int i = 1; i < sizey+1; i++) 
+        grid = new Cell[length+2][width+2];
+        for(int i = 1; i < length+1; i++)
         {
-            for(int j = 1; j < sizex+1; j++)
+            for(int j = 1; j < width+1; j++)
             {
                 grid[i][j] = new Cell((int)(Math.random()*2));
             }
@@ -49,7 +49,7 @@ public class Grid
             {
                 int counter = 0;
                 //def a cleaner way to do this :/
-
+                /*
                 counter += grid[i-1][j].getIsAlive();    //<-- First solution
                 counter += grid[i-1][j-1].getIsAlive();
                 counter += grid[i-1][j+1].getIsAlive();
@@ -59,7 +59,9 @@ public class Grid
                 counter += grid[i+1][j-1].getIsAlive();
                 counter += grid[i+1][j+1].getIsAlive();
 
-                /*
+
+
+
                 for(int x=j-1;x<3;x++)
                 {
                     counter += grid[i-1][x].getIsAlive();
@@ -75,8 +77,12 @@ public class Grid
                 counter += grid[i][j-1].getIsAlive();
                 */
 
+                for(int t = -1; t <= 1; t++)
+                    for(int r = -1; r<=1;r++)
+                        counter += grid[i+t][j+r].getIsAlive();
+                counter -= grid[i][j].getIsAlive();
+
                 if(grid[i][j].getIsAlive() == 1 && (counter < 2 || counter > 3))
-                    System.out.println(counter);
                     grid[i][j].setIsFutureAlive();
                 if(grid[i][j].getIsAlive() == 0 && counter == 3)
                     grid[i][j].setIsFutureAlive();
@@ -98,10 +104,9 @@ public class Grid
         {
             for(int j = 1; j < grid[1].length-1; j++)
             {
-                drawBox(j*5, i*5, grid[i][j].getIsAlive());
+                drawBox(j*5, i*5, Math.abs(grid[i][j].getIsAlive()-1));
             }
         }
-        update();
         update();
     }
     private void drawBox(int x, int y, int alive)
