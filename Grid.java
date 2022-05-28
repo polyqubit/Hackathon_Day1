@@ -44,7 +44,7 @@ public class Grid
     {
         for(int i = 1; i < grid.length-1; i++)
         {
-            for(int j = 1; i < grid[0].length-1; j++)
+            for(int j = 1; j < grid[0].length-1; j++)
             {
                 int counter = 0;
                 // def a cleaner way to do this :/
@@ -74,9 +74,12 @@ public class Grid
 
 
                 if(grid[i][j].getIsAlive() == 1 && (counter < 2 || counter > 3))
-                    grid[i][j].setIsFutureAlive();
-                if(grid[i][j].getIsAlive() == 0 && counter == 3)
-                    grid[i][j].setIsFutureAlive();
+                    grid[i][j].setFuture(0);
+                else if(grid[i][j].getIsAlive() == 0 && counter == 3)
+                    grid[i][j].setFuture(0);
+                else
+                    grid[i][j].setFuture(1);
+                
             }
         }
         for(Cell[] cellRow : grid)

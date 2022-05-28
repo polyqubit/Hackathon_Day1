@@ -19,7 +19,12 @@ public class starter implements InputControl, InputKeyControl
         p("Enter side length of grid: ");
         size = sc.nextInt(); sc.nextLine();
         g = new Grid(size, size);
-        g.draw();
+        while(true) {
+            g.draw();
+            g.update();
+            Canvas.pause(100);
+            Canvas.getInstance().clear();
+        }
 	}
 
 	public void onMouseClick(double x, double y)

@@ -13,9 +13,9 @@ public class Cell
     {
         return isAlive;
     }
-    public void setIsFutureAlive()
+    public void setFuture(int i)
     {
-        isFutureAlive = Math.abs(isFutureAlive-1);
+        isFutureAlive = i;
     }
     public void update()
     {
