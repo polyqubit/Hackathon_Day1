@@ -1,2 +1,2 @@
-javac --release 8 *.java
+javac starter.java
 pause
