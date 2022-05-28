@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f4c107a-50f7-4486-af4b-8ec8286d3331" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hackathon_Day1/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hackathon_Day1/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hackathon_Day1/starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hackathon_Day1/starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.starter" />
+        <item itemvalue="Application.starter1" />
       </list>
     </recent_temporary>
   </component>
@@ -56,5 +54,16 @@
       <updated>1653763761260</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
