@@ -1,5 +1,5 @@
-import pkg;
-import java.lang.Math.abs();
+import pkg.*;
+import java.lang.Math;
 public class Cell
 {
     private int isAlive; // 1 alive 0 dead
@@ -17,6 +17,8 @@ public class Cell
     {
         isFutureAlive = Math.abs(isFutureAlive-1);
     }
-    public void update();
-    isAlive = isFutureAlive;
+    public void update()
+    {
+        isAlive = isFutureAlive;
+    }
 }

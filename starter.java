@@ -1,9 +1,11 @@
 import pkg.*;
 import java.util.*;
 
-public class starter implements InputControl, InputKeyControl {
+public class starter implements InputControl, InputKeyControl
+{
     public static void p(String s) {System.out.print(s);}
-	public static void main(String args[]) {
+	public static void main(String args[])
+    {
 		// User input
 		KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 		MouseController mC = new MouseController(Canvas.getInstance(),new starter());
@@ -14,15 +16,17 @@ public class starter implements InputControl, InputKeyControl {
         Grid g; // dimensions
 
         p("Enter side length of grid: ");
-        
+
 	}
 
-	public void onMouseClick(double x, double y) {
+	public void onMouseClick(double x, double y)
+    {
 		// enter code here
 
 	}
 
-	public void keyPress(String s) {
+	public void keyPress(String s)
+    {
 		// enter code here
 
 	}

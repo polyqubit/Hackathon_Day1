@@ -1,32 +1,31 @@
-import pkg;
-import Cell;
-import java.lang.Math.random();
+import pkg.*;
+import java.util.Random;
 
 public class Grid
 {
     private Cell[][] grid;
     public Grid(int size)
     {
-        grid = new Cell[size][size];
+        grid = new Cell[size+2][size+2];
         for(int i = 0; i < grid.length; i++) {
             for (int j = 0; i < grid[0].length; j++) {
-                grid[i][j] = ne
+                // grid[i][j] = ne
             }
         }
 
     }
     public Grid(int sizex, int sizey)
     {
-        grid = new Cell[sizex+1][sizey+1];
+        grid = new Cell[sizex+2][sizey+2];
 
     }
     public Grid()
     {
-        grid = new Cell[51][51];
+        grid = new Cell[52][52];
     }
 
 
-    public void advance()
+    public void update()
     {
         for(int i = 1; i < grid.length-1; i++)
         {
@@ -34,21 +33,43 @@ public class Grid
             {
                 int counter = 0;
                 // def a cleaner way to do this :/
-                counter += grid[i-1][j];
-                counter += grid[i-1][j-1];
-                counter += grid[i-1][j+1];
-                counter += grid[i][j-1];
-                counter += grid[i][j+1];
-                counter += grid[i+1][j];
-                counter += grid[i+1][j-1];
-                counter += grid[i+1][j+1];
-                if(grid[i][j].getIsAlive == 1 && (counter < 2 || counter > 3))
+                // counter += grid[i-1][j];    <-- First solution
+                // counter += grid[i-1][j-1];
+                // counter += grid[i-1][j+1];
+                // counter += grid[i][j-1];
+                // counter += grid[i][j+1];
+                // counter += grid[i+1][j];
+                // counter += grid[i+1][j-1];
+                // counter += grid[i+1][j+1];
+
+
+                for(int x=j-1;x<3;x++)
+                {
+                    counter += grid[i-1][x].getIsAlive();
+                }
+                for(int y=i-1;y<3;y++)
+                {
+                    counter += grid[y][j+1].getIsAlive();
+                }
+                for(int x=j-1;x<2;x++)
+                {
+                    counter += grid[i+1][x].getIsAlive();
+                }
+                counter += grid[i][j-1].getIsAlive();
+
+
+                if(grid[i][j].getIsAlive() == 1 && (counter < 2 || counter > 3))
                     grid[i][j].setIsFutureAlive();
-                if(grid[i][j].getIsAlive == 0 && counter == 3)
+                if(grid[i][j].getIsAlive() == 0 && counter == 3)
                     grid[i][j].setIsFutureAlive();
             }
         }
-        for(Cell cell : grid)
-            cell.update();
+        for(Cell[] cellRow : grid)
+        {
+            for(Cell cell : cellRow)
+            {
+                cell.update();
+            }
+        }
     }
 }
