@@ -4,6 +4,12 @@ import java.util.Random;
 public class Grid
 {
     private Cell[][] grid;
+
+    public Grid()
+    {
+        this(50,50);
+    }
+
     public Grid(int size)
     {
         this(size, size);
@@ -12,20 +18,15 @@ public class Grid
     public Grid(int sizex, int sizey)
     {
         grid = new Cell[sizex+2][sizey+2];
-        for(int i = 0; i < sizex+2; i++)
+        for(int i = 1; i < sizex-1; i++) 
         {
-            for(int j = 0; j < sizey+2; j++)
+            for(int j = 1; j < sizey-1; j++)
             {
                 grid[i][j] = new Cell((int)(Math.random()*2));
             }
         }
 
     }
-    public Grid()
-    {
-        this(50,50);
-    }
-
 
     public void update()
     {
@@ -73,5 +74,22 @@ public class Grid
                 cell.update();
             }
         }
+    }
+
+    public void draw()
+    {
+        for(int i = 1; i < grid.length-1; i++)
+        {
+            for(int j = 1; i < grid[1].length-1; j++)
+            {
+                drawBox(j*5, i*5, grid[i][j].getIsAlive());
+            }
+        }
+    }
+    private void drawBox(int x, int y, int alive)
+    {
+        Rectangle r = new Rectangle(x,y,5,5);
+        r.setColor(new Color(alive*255,alive*255,alive*255));
+        r.fill();
     }
 }

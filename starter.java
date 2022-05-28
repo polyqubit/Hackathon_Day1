@@ -14,9 +14,12 @@ public class starter implements InputControl, InputKeyControl
 
         Scanner sc = new Scanner(System.in);
         Grid g; // dimensions
+        int size;
 
         p("Enter side length of grid: ");
-
+        size = sc.nextInt(); sc.nextLine();
+        g = new Grid(size, size);
+        g.draw();
 	}
 
 	public void onMouseClick(double x, double y)
