@@ -17,12 +17,13 @@ public class Grid
     
     public Grid(int sizex, int sizey)
     {
+        Random rand = new Random();
         grid = new Cell[sizex+2][sizey+2];
         for(int i = 1; i < sizey+1; i++) 
         {
             for(int j = 1; j < sizex+1; j++)
             {
-                grid[i][j] = new Cell((int)(Math.random()*2));
+                grid[i][j] = new Cell((rand.nextInt(10)>8) ? 0 : 1);
             }
         }
 
@@ -73,7 +74,7 @@ public class Grid
                 counter += grid[i][j-1].getIsAlive();
 
 
-                if(grid[i][j].getIsAlive() == 1 && (counter < 2 || counter > 3))
+                if(grid[i][j].getIsAlive() == 1 && ((counter < 2) || (counter > 3)))
                     grid[i][j].setFuture(0);
                 else if(grid[i][j].getIsAlive() == 0 && counter == 3)
                     grid[i][j].setFuture(0);
