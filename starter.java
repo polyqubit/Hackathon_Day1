@@ -18,10 +18,10 @@ public class starter implements InputControl, InputKeyControl
         //Grid g; // dimensions
         int size;
 
-        p("Enter side length of grid: ");
-        size = sc.nextInt(); sc.nextLine();
-        g = new Grid(size, size);
-
+        //p("Enter side length of grid: ");
+        //size = sc.nextInt(); sc.nextLine();
+        g = new Grid(50, 50);
+        g.draw();
 	}
 
 	public void onMouseClick(double x, double y)
@@ -32,7 +32,6 @@ public class starter implements InputControl, InputKeyControl
 
 	public void keyPress(String s)
     {
-        System.out.println("test " + s);
         if(s.equals("n"))
             g.draw();
 	}

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f4c107a-50f7-4486-af4b-8ec8286d3331" name="Changes" comment="" />
+    <list default="true" id="1f4c107a-50f7-4486-af4b-8ec8286d3331" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hackathon_Day1/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hackathon_Day1/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hackathon_Day1/starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hackathon_Day1/starter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/starter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/starter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +26,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="starter" />
