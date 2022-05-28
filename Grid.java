@@ -49,7 +49,7 @@ public class Grid
             {
                 int counter = 0;
                 //def a cleaner way to do this :/
-                /*
+
                 counter += grid[i-1][j].getIsAlive();    //<-- First solution
                 counter += grid[i-1][j-1].getIsAlive();
                 counter += grid[i-1][j+1].getIsAlive();
@@ -58,8 +58,8 @@ public class Grid
                 counter += grid[i+1][j].getIsAlive();
                 counter += grid[i+1][j-1].getIsAlive();
                 counter += grid[i+1][j+1].getIsAlive();
-                */
 
+                /*
                 for(int x=j-1;x<3;x++)
                 {
                     counter += grid[i-1][x].getIsAlive();
@@ -73,9 +73,10 @@ public class Grid
                     counter += grid[i+1][x].getIsAlive();
                 }
                 counter += grid[i][j-1].getIsAlive();
-
+                */
 
                 if(grid[i][j].getIsAlive() == 1 && (counter < 2 || counter > 3))
+                    System.out.println(counter);
                     grid[i][j].setIsFutureAlive();
                 if(grid[i][j].getIsAlive() == 0 && counter == 3)
                     grid[i][j].setIsFutureAlive();
@@ -92,7 +93,7 @@ public class Grid
 
     public void draw()
     {
-        Canvas.getInstance().repaint();
+        Canvas.getInstance().clear();
         for(int i = 1; i < grid.length-1; i++)
         {
             for(int j = 1; j < grid[1].length-1; j++)
