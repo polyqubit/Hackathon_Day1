@@ -141,6 +141,12 @@ public class Canvas
 		repaint();
 	}
 
+    // clears canvas to optimize
+    public void clear() {
+        shapes.clear();
+        repaint();
+    }
+
     public void repaint()
     {
         if (frame == null) return;
