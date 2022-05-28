@@ -18,14 +18,26 @@ public class Grid
     public Grid(int sizex, int sizey)
     {
         grid = new Cell[sizex+2][sizey+2];
-        for(int i = 1; i < sizex-1; i++) 
+        for(int i = 1; i < sizey+1; i++) 
         {
-            for(int j = 1; j < sizey-1; j++)
+            for(int j = 1; j < sizex+1; j++)
             {
                 grid[i][j] = new Cell((int)(Math.random()*2));
             }
         }
 
+        for(int i=0;i<grid[0].length;i++) {
+            grid[0][i] = new Cell(0);
+        }
+        for(int i=0;i<grid[0].length;i++) {
+            grid[grid.length-1][i] = new Cell(0);
+        }
+        for(int i=1;i<grid.length-1;i++) {
+            grid[i][grid.length-1] = new Cell(0);
+        }
+        for(int i=1;i<grid.length-1;i++) {
+            grid[i][0] = new Cell(0);
+        }
     }
 
     public void update()
@@ -80,7 +92,7 @@ public class Grid
     {
         for(int i = 1; i < grid.length-1; i++)
         {
-            for(int j = 1; i < grid[1].length-1; j++)
+            for(int j = 1; j < grid[1].length-1; j++)
             {
                 drawBox(j*5, i*5, grid[i][j].getIsAlive());
             }
