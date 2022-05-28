@@ -71,8 +71,8 @@ public class Canvas
                 maxy = (int) Math.max(maxy, s.getY() + s.getHeight());
             }
 			// changed by Neato to make Canvas the same size (600 x 600)
-            // changed by Micah because 600 x 600 is too small
-			return new Dimension(1000,1000);
+			// changed by Micah to make Canvas larger because I don't agree with the size
+			return new Dimension(1000,600);
             //return new Dimension(maxx + MARGIN, maxy + MARGIN);
         }
     }
@@ -141,10 +141,6 @@ public class Canvas
 		repaint();
 	}
 
-    public void clear() {
-        shapes.clear();
-    }
-
     public void repaint()
     {
         if (frame == null) return;
@@ -197,7 +193,7 @@ public class Canvas
         RescaleOp op = new RescaleOp(factor, base, null);
         BufferedImage filteredImage
            = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-        //op.filter(image, filteredImage);
+        op.filter(image, filteredImage);
         getInstance().background = filteredImage;
         getInstance().component.repaint();
     }

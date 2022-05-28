@@ -85,17 +85,6 @@ public class Rectangle implements Shape
         y += dy;
         Canvas.getInstance().repaint();
     }
-    
-    /**
-     * Sets coordinates of this rectangle
-     * @param x x
-     * @param y y
-     */
-    public void setPos(double x, double y)
-    {
-        this.x = x;
-        this.y = y;
-    }
 
     /**
        Resizes this rectangle both horizontally and vertically.
