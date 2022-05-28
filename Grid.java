@@ -102,6 +102,7 @@ public class Grid
     {
         Rectangle r = new Rectangle(x,y,5,5);
         r.setColor(new Color(alive*255,alive*255,alive*255));
-        r.fill();
+        r.fill(0,y,500,5);
+        // r.fill();
     }
 }

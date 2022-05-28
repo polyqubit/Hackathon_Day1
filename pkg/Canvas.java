@@ -132,6 +132,15 @@ public class Canvas
         }
         repaint();
     }
+    
+    public void show(Shape s, int x, int y, int w, int h)
+    {
+        if (!shapes.contains(s))
+        {
+            shapes.add(s);
+        }
+        repaint(x,y,w,h);
+    }
 
 	public void unshow(Shape s)
 	{
@@ -159,6 +168,21 @@ public class Canvas
         else
         {
             frame.repaint();
+        }
+    }
+
+    public void repaint(int x, int y, int w, int h)
+    {
+        if (frame == null) return;
+        Dimension dim = component.getPreferredSize();
+        if (dim.getWidth() > component.getWidth()
+                || dim.getHeight() > component.getHeight())
+        {
+            frame.pack();
+        }
+        else
+        {
+            frame.repaint(x,y,w,h);
         }
     }
 

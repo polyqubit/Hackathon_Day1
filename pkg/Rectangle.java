@@ -129,6 +129,14 @@ public class Rectangle implements Shape
     }
 
     /**
+        goofy auugh
+    */
+    public void fill(int x, int y, int w, int h) {
+        filled = true;
+        Canvas.getInstance().show(this,x,y,w,h);
+    }
+
+    /**
         Undraws this rectangle.
     */
     public void undraw()
