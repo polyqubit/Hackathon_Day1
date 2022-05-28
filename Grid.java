@@ -6,22 +6,24 @@ public class Grid
     private Cell[][] grid;
     public Grid(int size)
     {
-        grid = new Cell[size+2][size+2];
-        for(int i = 0; i < grid.length; i++) {
-            for (int j = 0; i < grid[0].length; j++) {
-                // grid[i][j] = ne
+        this(size, size);
+    }
+    
+    public Grid(int sizex, int sizey)
+    {
+        grid = new Cell[sizex+2][sizey+2];
+        for(int i = 0; i < sizex+2; i++)
+        {
+            for(int j = 0; j < sizey+2; j++)
+            {
+                grid[i][j] = new Cell((int)(Math.random()*2));
             }
         }
 
     }
-    public Grid(int sizex, int sizey)
-    {
-        grid = new Cell[sizex+2][sizey+2];
-
-    }
     public Grid()
     {
-        grid = new Cell[52][52];
+        this(50,50);
     }
 
 
